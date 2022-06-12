@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,400;0,700;1,300&display=swap');
 
+.fadein {
+    opacity:0;
+}
+
 body {
     font-family: 'Mulish', Sans-serif;
     margin: 0;
@@ -35,14 +39,40 @@ nav ul {
 
 .nav-items li a {
     color: #E6E6E6;
-    font-size: 14px;
+    font-size: 16px;
     font-family: 'Mulish', sans-serif;
     text-decoration: none;
 }
 
-.nav-items--black li a {
-    color: black;
+.nav-items li a:hover{
+    color: #EB315A;
 }
+
+.nav-items--black li a {
+    color:#181818;
+    float: left;
+    position: relative;
+    padding: 10px 2px;
+    overflow: hidden;
+}
+
+.nav-items--black li a::after {
+    background-color: #EB315A;
+    content: "";
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    transition: width 0.35s ease 0s;
+    position: absolute;
+}
+
+
+.nav-items--black li a:hover::after{
+    width: 100%;
+}
+
+
 
 /*Hero Section*/
 
@@ -64,8 +94,23 @@ nav ul {
     height: 14px;
     left: 49%;
     position: absolute;
-    bottom: 20px;
+    bottom: 60px;
     width: 24px;
+}
+
+.arrow {
+    -webkit-animation: mover 0.5s ;
+    animation: mover 0.5s infinite  alternate;
+}
+
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
 }
 
 .name {
@@ -107,6 +152,7 @@ nav ul {
     justify-content: center;
     /* align-items: center; */
 }
+
 
 /* headlines with lines */
 .decorated {
@@ -155,6 +201,7 @@ nav ul {
     color: #181818;
     text-align: center;
 }
+
 
 .grid-container1 {
     width: 60%;
@@ -213,7 +260,7 @@ nav ul {
 }
 
 footer {
-    position: absolute;
+    position: flex;
     bottom: 0;
     background-color: gainsboro;
     width: 100%;
@@ -244,4 +291,131 @@ footer {
     padding-left: 115px;
     cursor: pointer;
 }
+
+.scroll-up:hover {
+    -webkit-animation: mover 0.5s ;
+    animation: mover 0.5s infinite  alternate;
+}
+
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+
+/*UX/UI Design page*/
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 30vw);
+    grid-gap: 10x;
+    row-gap: 10px;
+    column-gap: -5px;
+    padding: 100px;
+}
+
+.gallery__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery__item--1 {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.gallery__item--2 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+ }
+
+.gallery__item--3 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.gallery__item--4 {
+    grid-column-start: 3.5;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.gallery__item--5 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+/*About Me page*/
+
+.resume{
+    text-decoration: none;
+    color: #EB315A;
+}
+
+.about-me-picture {
+    display: flex;
+    justify-content: center;
+}
+
+.img1 {
+    z-index: 1;
+}
+
+.img2 {
+    position: absolute;
+    z-index: 2;
+}
+
+.icons-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    padding-bottom: 300px;
+    gap: 20px;
+}
+
+.icons-section span {
+    color: #EB315A;
+    font-family: 'Mulish', sans-serif;
+    font-size: 24px;
+}
+
+.about-me-info {
+    display: flex;
+    justify-content: center;
+    width: 55%;
+    margin: 0 auto;
+}
+
+.about-me-info .header {
+    color: #EB315A;
+}
+
+.title {
+    font-family: 'Mulish', sans-serif;
+    text-align: center;
+    font-size: 35px;
+    margin: 120px 0 50px;
+}
+
+.container {
+    position: relative;
+}
+
 
